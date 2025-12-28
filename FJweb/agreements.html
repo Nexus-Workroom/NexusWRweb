@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>协议文档 - 鱼集征途</title>
+    <link rel="stylesheet" href="agreements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-text">加载中...</div>
+        </div>
+    </div>
+
+    <!-- 协议页面导航 -->
+    <nav class="agreements-navbar">
+        <div class="agreements-nav-container">
+            <div class="agreements-nav-logo">
+                <a href="main.html">
+                    <img src="img/logo1280.png" alt="鱼集征途" class="logo-hover">
+                </a>
+            </div>
+            <ul class="agreements-nav-menu">
+                <li class="agreements-nav-item"><a href="main.html#intro" class="agreements-nav-link"><i class="fas fa-gamepad"></i> 游戏简介</a></li>
+                <li class="agreements-nav-item"><a href="main.html#contact" class="agreements-nav-link"><i class="fas fa-envelope"></i> 联系方式</a></li>
+                <li class="agreements-nav-item"><a href="agreements.html" class="agreements-nav-link active"><i class="fas fa-file-contract"></i> 协议文档</a></li>
+            </ul>
+            <div class="agreements-hamburger">
+                <span class="agreements-bar"></span>
+                <span class="agreements-bar"></span>
+                <span class="agreements-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 协议页面英雄区域 -->
+    <section class="agreements-hero">
+        <div class="agreements-hero-content">
+            <h1 class="agreements-hero-title">协议文档</h1>
+            <p class="agreements-hero-subtitle">请仔细阅读以下协议和政策文件</p>
+        </div>
+    </section>
+
+    <!-- 协议文档容器 -->
+    <div class="agreements-container">
+        <!-- 侧边栏 -->
+        <aside class="agreements-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">文档列表</h2>
+                <p class="sidebar-subtitle">选择要查看的协议文档</p>
+            </div>
+            <ul class="documents-list">
+                <li class="document-item">
+                    <a href="#privacy" class="document-link active" data-target="privacy">
+                        <div class="document-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>隐私政策</h3>
+                            <p>数据收集与使用说明</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="#terms" class="document-link" data-target="terms">
+                        <div class="document-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>用户最终协议</h3>
+                            <p>服务条款与使用规范</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="#cookies" class="document-link" data-target="cookies">
+                        <div class="document-icon">
+                            <i class="fas fa-cookie-bite"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>Cookie政策</h3>
+                            <p>Cookie使用说明</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="#community" class="document-link" data-target="community">
+                        <div class="document-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>社区准则</h3>
+                            <p>用户行为规范</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="#refund" class="document-link" data-target="refund">
+                        <div class="document-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>退款政策</h3>
+                            <p>购买与退款说明</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="document-item">
+                    <a href="#copyright" class="document-link" data-target="copyright">
+                        <div class="document-icon">
+                            <i class="fas fa-copyright"></i>
+                        </div>
+                        <div class="document-info">
+                            <h3>版权声明</h3>
+                            <p>知识产权说明</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主要内容区域 -->
+        <main class="agreements-content">
+            <!-- 隐私政策 -->
+            <section id="privacy" class="document-section active">
+                <div class="document-header">
+                    <h1 class="document-title">隐私政策</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>阅读时间：约5分钟</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>版本：V2.0</span>
+                        </div>
+                    </div>
+                    <p>本隐私政策描述了我们在您使用《鱼干集团那些事：征途》游戏及相关服务时，如何收集、使用、存储、共享和保护您的个人信息。</p>
+                </div>
+                
+                <div class="document-content">
+                    <div class="highlight-box">
+                        <p><strong>重要提示：</strong>请仔细阅读本隐私政策，了解我们如何处理您的个人信息。使用我们的服务即表示您同意按照本政策的规定收集、使用和共享您的信息。</p>
+                    </div>
+                    
+                    <h2>1. 信息收集</h2>
+                    <p>我们收集的信息包括：</p>
+                    <ul>
+                        <li><strong>基本信息：</strong>游戏账号、昵称、联系方式等</li>
+                        <li><strong>游戏数据：</strong>游戏进度、成就、角色信息、游戏内购买记录</li>
+                        <li><strong>设备信息：</strong>设备型号、操作系统、IP地址、设备标识符</li>
+                        <li><strong>日志信息：</strong>游戏内行为日志、错误报告、性能数据</li>
+                    </ul>
+                    
+                    <h2>2. 信息使用</h2>
+                    <p>我们使用收集的信息用于：</p>
+                    <ul>
+                        <li>提供、维护和改进游戏服务</li>
+                        <li>处理您的游戏内购买和交易</li>
+                        <li>发送重要通知和更新</li>
+                        <li>确保游戏安全和防止欺诈行为</li>
+                        <li>分析游戏性能和改进用户体验</li>
+                    </ul>
+                    
+                    <h2>3. 信息共享</h2>
+                    <p>我们仅在以下情况下共享您的信息：</p>
+                    <ul>
+                        <li>获得您的明确同意</li>
+                        <li>为遵守法律法规要求</li>
+                        <li>保护我们的合法权益</li>
+                        <li>与服务提供商共享必要信息（如支付处理）</li>
+                    </ul>
+                    
+                    <h2>4. 数据安全</h2>
+                    <p>我们采取合理的技术和组织措施保护您的个人信息安全，包括加密传输、访问控制等。</p>
+                    
+                    <h2>5. 您的权利</h2>
+                    <p>您有权：</p>
+                    <ul>
+                        <li>访问和获取您的个人信息副本</li>
+                        <li>更正不准确的个人信息</li>
+                        <li>删除您的个人信息（在法律允许范围内）</li>
+                        <li>限制或反对我们处理您的信息</li>
+                    </ul>
+                    
+                    <h2>6. 未成年人保护</h2>
+                    <p>我们特别重视未成年人的个人信息保护。未满18周岁的用户应在监护人指导下使用我们的服务。</p>
+                    
+                    <h2>7. 政策更新</h2>
+                    <p>我们可能会不时更新本隐私政策。更新后的政策将在本页面发布，并更新"最后更新"日期。</p>
+                    
+                    <h2>8. 联系我们</h2>
+                    <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：</p>
+                    <p>邮箱：privacy@fishjourney.com</p>
+                </div>
+                
+                <div class="agreement-actions">
+                    <button class="action-button" onclick="printDocument('privacy')">
+                        <i class="fas fa-print"></i> 打印本协议
+                    </button>
+                    <button class="action-button" onclick="downloadDocument('privacy')">
+                        <i class="fas fa-download"></i> 下载PDF
+                    </button>
+                </div>
+            </section>
+
+            <!-- 用户最终协议 -->
+            <section id="terms" class="document-section">
+                <div class="document-header">
+                    <h1 class="document-title">用户最终协议</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>阅读时间：约10分钟</span>
+                        </div>
+                    </div>
+                    <p>本用户协议是您与联结纪元工作室之间关于使用《鱼干集团那些事：征途》游戏及相关服务的法律协议。</p>
+                </div>
+                
+                <div class="document-content">
+                    <div class="warning-box">
+                        <p><strong>重要提醒：</strong>在使用本游戏前，请仔细阅读本协议的全部条款。如果您不同意本协议的任意条款，请勿使用本游戏。</p>
+                    </div>
+                    
+                    <h2>1. 接受条款</h2>
+                    <p>通过访问或使用《鱼干集团那些事：征途》游戏，您表示同意接受本协议的所有条款和条件。</p>
+                    
+                    <h2>2. 服务说明</h2>
+                    <p>我们提供《鱼干集团那些事：征途》游戏及相关服务，包括但不限于游戏内容更新、技术支持和社区服务。</p>
+                    
+                    <h2>3. 用户账户</h2>
+                    <p>您需要创建账户才能使用完整游戏功能。您有责任：</p>
+                    <ul>
+                        <li>提供准确、完整的注册信息</li>
+                        <li>妥善保管账户密码</li>
+                        <li>及时更新个人信息</li>
+                        <li>对账户下的所有活动负责</li>
+                    </ul>
+                    
+                    <h2>4. 使用规则</h2>
+                    <p>您同意不进行以下行为：</p>
+                    <ul>
+                        <li>使用任何外挂、作弊程序或修改游戏客户端</li>
+                        <li>利用游戏漏洞获取不正当利益</li>
+                        <li>发布违法、侵权、骚扰性内容</li>
+                        <li>干扰或破坏游戏服务</li>
+                        <li>从事任何损害游戏公平性的行为</li>
+                    </ul>
+                    
+                    <h2>5. 虚拟物品</h2>
+                    <p>游戏内虚拟物品（如游戏币、道具等）的所有权归我们所有，您仅获得使用权。虚拟物品不可转让、不可兑换为现实货币。</p>
+                    
+                    <h2>6. 知识产权</h2>
+                    <p>游戏及相关内容（包括但不限于代码、图像、音频、文字）的所有知识产权归联结纪元工作室所有。</p>
+                    
+                    <h2>7. 免责声明</h2>
+                    <p>游戏按"现状"提供，我们不保证：</p>
+                    <ul>
+                        <li>游戏不会中断或没有错误</li>
+                        <li>游戏符合您的特定需求</li>
+                        <li>游戏内容永远准确或最新</li>
+                    </ul>
+                    
+                    <h2>8. 责任限制</h2>
+                    <p>在法律允许的最大范围内，我们对因使用游戏造成的任何间接、附带、特殊或后果性损害不承担责任。</p>
+                    
+                    <h2>9. 协议修改</h2>
+                    <p>我们有权随时修改本协议。修改后的协议将在游戏内或官网上公布，继续使用游戏表示您接受修改。</p>
+                    
+                    <h2>10. 终止</h2>
+                    <p>我们有权在您违反本协议时暂停或终止您的账户和游戏使用权。</p>
+                    
+                    <h2>11. 法律适用</h2>
+                    <p>本协议受中华人民共和国法律管辖并据其解释。</p>
+                    
+                    <h2>12. 争议解决</h2>
+                    <p>因本协议引起的任何争议，双方应友好协商解决；协商不成的，提交有管辖权的人民法院诉讼解决。</p>
+                </div>
+                
+                <div class="agreement-actions">
+                    <button class="action-button" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i> 回到顶部
+                    </button>
+                </div>
+            </section>
+
+            <!-- Cookie政策 -->
+            <section id="cookies" class="document-section">
+                <div class="document-header">
+                    <h1 class="document-title">Cookie政策</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                    </div>
+                    <p>本Cookie政策解释了我们在《鱼干集团那些事：征途》游戏中如何使用Cookie和类似技术。</p>
+                </div>
+                
+                <div class="document-content">
+                    <h2>1. 什么是Cookie</h2>
+                    <p>Cookie是网站存储在您设备上的小型文本文件，用于记住您的偏好和设置。</p>
+                    
+                    <h2>2. 我们使用的Cookie类型</h2>
+                    <ul>
+                        <li><strong>必要Cookie：</strong>确保网站基本功能正常运行</li>
+                        <li><strong>偏好Cookie：</strong>记住您的语言设置和其他偏好</li>
+                        <li><strong>统计Cookie：</strong>帮助我们了解用户如何使用网站</li>
+                        <li><strong>营销Cookie：</strong>用于显示相关广告</li>
+                    </ul>
+                    
+                    <h2>3. 如何管理Cookie</h2>
+                    <p>您可以通过浏览器设置控制Cookie的使用。但请注意，禁用某些Cookie可能会影响网站功能。</p>
+                    
+                    <h2>4. 第三方Cookie</h2>
+                    <p>我们可能会使用第三方服务，这些服务可能会设置自己的Cookie。</p>
+                    
+                    <h2>5. 政策更新</h2>
+                    <p>我们可能会不时更新本Cookie政策。请定期查看以了解最新信息。</p>
+                </div>
+            </section>
+
+            <!-- 社区准则 -->
+            <section id="community" class="document-section">
+                <div class="document-header">
+                    <h1 class="document-title">社区准则</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                    </div>
+                    <p>为维护良好的游戏社区环境，请所有用户遵守以下行为准则。</p>
+                </div>
+                
+                <div class="document-content">
+                    <h2>1. 尊重他人</h2>
+                    <p>请尊重所有玩家，避免使用侮辱性、歧视性或攻击性语言。</p>
+                    
+                    <h2>2. 公平游戏</h2>
+                    <p>禁止使用任何外挂、作弊程序或利用游戏漏洞获取不正当优势。</p>
+                    
+                    <h2>3. 内容规范</h2>
+                    <p>请勿发布或分享违法、色情、暴力或其他不当内容。</p>
+                    
+                    <h2>4. 账号安全</h2>
+                    <p>请妥善保管您的账号信息，不要与他人共享账号。</p>
+                    
+                    <h2>5. 反馈与举报</h2>
+                    <p>如果您发现其他玩家违反社区准则，请使用游戏内举报系统向我们报告。</p>
+                    
+                    <h2>6. 违规处理</h2>
+                    <p>违反社区准则可能导致警告、暂时封禁或永久封禁账号。</p>
+                </div>
+            </section>
+
+            <!-- 退款政策 -->
+            <section id="refund" class="document-section">
+                <div class="document-header">
+                    <h1 class="document-title">退款政策</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                    </div>
+                    <p>本政策说明了游戏内购买和相关服务的退款规则。</p>
+                </div>
+                
+                <div class="document-content">
+                    <h2>1. 数字产品退款</h2>
+                    <p>根据相关法律法规，数字产品一经购买并下载，通常不支持退款，除非存在以下情况：</p>
+                    <ul>
+                        <li>产品存在严重技术问题且无法修复</li>
+                        <li>产品与描述严重不符</li>
+                        <li>未经授权的购买</li>
+                    </ul>
+                    
+                    <h2>2. 游戏内购买退款</h2>
+                    <p>游戏内虚拟物品购买后通常不可退款，除非：</p>
+                    <ul>
+                        <li>购买后立即发现购买错误</li>
+                        <li>购买时出现重复扣款</li>
+                        <li>购买时账户被盗用</li>
+                    </ul>
+                    
+                    <h2>3. 退款申请流程</h2>
+                    <p>如需申请退款，请：</p>
+                    <ol>
+                        <li>通过客服邮箱联系我们的支持团队</li>
+                        <li>提供购买凭证和相关信息</li>
+                        <li>说明退款原因和具体情况</li>
+                    </ol>
+                    
+                    <h2>4. 退款处理时间</h2>
+                    <p>退款申请将在收到后7个工作日内处理，实际到账时间可能因支付方式而异。</p>
+                    
+                    <h2>5. 联系方式</h2>
+                    <p>退款相关问题请联系：refund@fishjourney.com</p>
+                </div>
+            </section>
+
+            <!-- 版权声明 -->
+            <section id="copyright" class="document-section">
+                <div class="document-header">
+                    <h1 class="document-title">版权声明</h1>
+                    <div class="document-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>最后更新：2025年12月</span>
+                        </div>
+                    </div>
+                    <p>本声明明确了《鱼干集团那些事：征途》游戏的知识产权归属和使用限制。</p>
+                </div>
+                
+                <div class="document-content">
+                    <h2>1. 版权所有权</h2>
+                    <p>《鱼干集团那些事：征途》游戏及其所有内容，包括但不限于：</p>
+                    <ul>
+                        <li>游戏代码、程序设计</li>
+                        <li>游戏美术、图像、动画</li>
+                        <li>游戏音乐、音效</li>
+                        <li>游戏文本、故事情节</li>
+                        <li>游戏角色、世界观设定</li>
+                    </ul>
+                    <p>的版权归联结纪元工作室所有，受《中华人民共和国著作权法》保护。</p>
+                    
+                    <h2>2. 使用许可</h2>
+                    <p>我们授予您有限的、非独占的、不可转让的许可，用于个人非商业目的使用游戏。</p>
+                    
+                    <h2>3. 禁止行为</h2>
+                    <p>未经明确书面许可，禁止：</p>
+                    <ul>
+                        <li>复制、修改、分发游戏内容</li>
+                        <li>对游戏进行逆向工程、反编译或反汇编</li>
+                        <li>创建衍生作品或基于游戏内容进行二次创作</li>
+                        <li>将游戏内容用于商业目的</li>
+                    </ul>
+                    
+                    <h2>4. 用户生成内容</h2>
+                    <p>用户创建的同人作品应遵守以下原则：</p>
+                    <ul>
+                        <li>明确标注版权归属</li>
+                        <li>仅用于非商业目的</li>
+                        <li>不得损害游戏形象</li>
+                    </ul>
+                    
+                    <h2>5. 侵权举报</h2>
+                    <p>如果您发现侵犯我们版权的行为，请通过以下方式举报：copyright@fishjourney.com</p>
+                    
+                    <h2>6. 法律追索</h2>
+                    <p>对于任何侵权行为，我们将保留采取法律行动的权利。</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 协议页面页脚 -->
+    <footer class="agreements-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="img/logo1280.png" alt="鱼集征途">
+                    </a>
+                </div>
+                <p>&copy; 2025 联结纪元 版权所有</p>
+                <div class="footer-links">
+                    <a href="index.html">返回首页</a> | 
+                    <a href="index.html#contact">联系我们</a> | 
+                    <a href="agreements.html#privacy">隐私政策</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 协议页面JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // 隐藏加载动画
+            setTimeout(() => {
+                const loadingOverlay = document.querySelector('.loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    loadingOverlay.style.visibility = 'hidden';
+                }
+            }, 500);
+            
+            // 初始化文档切换功能
+            initDocumentSwitcher();
+            
+            // 初始化导航栏功能
+            initAgreementsNav();
+        });
+        
+        function initDocumentSwitcher() {
+            const documentLinks = document.querySelectorAll('.document-link');
+            const documentSections = document.querySelectorAll('.document-section');
+            
+            documentLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // 更新活动链接
+                    documentLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 更新活动内容区域
+                    documentSections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // 更新URL hash
+                    history.pushState(null, null, `#${targetId}`);
+                    
+                    // 滚动到顶部
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // 检查URL hash并激活对应文档
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const targetLink = document.querySelector(`.document-link[data-target="${hash}"]`);
+                const targetSection = document.getElementById(hash);
+                
+                if (targetLink && targetSection) {
+                    document.querySelectorAll('.document-link').forEach(l => l.classList.remove('active'));
+                    documentSections.forEach(section => section.classList.remove('active'));
+                    
+                    targetLink.classList.add('active');
+                    targetSection.classList.add('active');
+                }
+            }
+        }
+        
+        function initAgreementsNav() {
+            const hamburger = document.querySelector('.agreements-hamburger');
+            const navMenu = document.querySelector('.agreements-nav-menu');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            // 点击导航链接关闭菜单（移动端）
+            document.querySelectorAll('.agreements-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (hamburger && navMenu) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // 协议操作功能
+        function printDocument(sectionId) {
+            const section = document.getElementById(sectionId);
+            const originalContent = section.innerHTML;
+            
+            // 创建打印窗口
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>打印 - ${section.querySelector('.document-title').textContent}</title>
+                    <style>
+                        body { font-family: 'SimSun', serif; line-height: 1.6; margin: 40px; }
+                        h1 { font-size: 24px; margin-bottom: 20px; }
+                        h2 { font-size: 18px; margin-top: 30px; }
+                        p { margin-bottom: 15px; }
+                        ul { margin-left: 20px; }
+                        .highlight-box { background: #f5f5f5; padding: 15px; margin: 20px 0; border-left: 4px solid #ccc; }
+                        @media print {
+                            body { margin: 0; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    ${section.outerHTML}
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.focus();
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 500);
+        }
+        
+        function downloadDocument(sectionId) {
+            // 模拟下载功能
+            const section = document.getElementById(sectionId);
+            const title = section.querySelector('.document-title').textContent;
+            
+            alert(`即将下载"${title}"的PDF版本\n\n（注：此功能为演示，实际使用时需连接后端服务生成PDF）`);
+        }
+        
+        function agreeToDocument(sectionId) {
+            const section = document.getElementById(sectionId);
+            const title = section.querySelector('.document-title').textContent;
+            
+            // 显示确认对话框
+            if (confirm(`您确认已阅读并同意"${title}"的全部内容吗？`)) {
+                // 存储用户同意状态
+                localStorage.setItem(`agreed_${sectionId}`, new Date().toISOString());
+                
+                // 显示成功提示
+                showNotification(`已记录您对"${title}"的同意`, 'success');
+            }
+        }
+        
+        function agreeToAll() {
+            // 显示确认对话框
+            if (confirm('您确认已阅读并同意所有协议和政策文件吗？')) {
+                // 记录所有协议的同意状态
+                const sections = ['privacy', 'terms', 'cookies', 'community', 'refund', 'copyright'];
+                sections.forEach(section => {
+                    localStorage.setItem(`agreed_${section}`, new Date().toISOString());
+                });
+                
+                // 显示成功提示并返回首页
+                showNotification('已记录您对所有协议的同意，即将返回首页', 'success');
+                
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function showNotification(message, type = 'info') {
+            // 创建通知元素
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // 添加动画
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            // 3秒后移除通知
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        // 添加页面间过渡效果
+        const navLinks = document.querySelectorAll('a[href^="index.html"]');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 如果是hash链接（同一页面锚点），不处理
+                if (this.getAttribute('href').startsWith('#')) {
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                // 创建页面过渡效果
+                const transition = document.createElement('div');
+                transition.className = 'page-transition';
+                transition.innerHTML = `
+                    <div class="loading-spinner">
+                        <div class="spinner-circle"></div>
+                        <div class="spinner-text">加载中...</div>
+                    </div>
+                `;
+                
+                document.body.appendChild(transition);
+                
+                // 延迟后跳转
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>

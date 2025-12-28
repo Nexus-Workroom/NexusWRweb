@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="《鱼干集团那些事：征途》是一款furry向管理、动作角色扮演游戏，基于B站动画改编。">
+    <meta name="keywords" content="鱼干集团, 征途, 游戏, furry, 角色扮演, 管理">
+    <meta name="author" content="联结纪元">
+    <meta property="og:title" content="鱼集征途 - 游戏介绍">
+    <meta property="og:description" content="新世征途 携手破界 - 鱼干集团那些事：征途">
+    <meta property="og:image" content="img/logo1280.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>鱼集征途 - 游戏介绍</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "鱼干集团那些事：征途",
+        "description": "一款furry向管理、动作角色扮演游戏",
+        "publisher": "联结纪元",
+        "releaseDate": "2026-01-01",
+        "genre": ["Adventure", "Management", "Action RPG"]
+    }
+    </script>
+</head>
+<body>
+    <!-- 鼠标跟随效果 -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-outline" aria-hidden="true"></div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" aria-label="返回顶部">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- 粒子背景 -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/logo1280.png" alt="鱼集征途游戏Logo" class="logo-hover">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#thanks" class="nav-link"><i class="fas fa-heart" aria-hidden="true"></i> 特别鸣谢</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-envelope" aria-hidden="true"></i> 联系方式</a></li>
+                <li class="nav-item"><a href="agreements.html" class="nav-link" target="_blank" rel="noopener"><i class="fas fa-file-contract" aria-hidden="true"></i> 协议文档</a></li>
+                <li class="nav-item"><a href="chuangyi.html" class="nav-link" target="_blank" rel="noopener"><i class="fas fa-file-contract" aria-hidden="true"></i> 创意工坊</a></li>
+            </ul>
+            <div class="hamburger" aria-label="菜单">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" role="banner">
+        <div class="hero-content">
+            <h1 class="hero-title animate-title">鱼干集团那些事：征途</h1>
+            <p class="hero-subtitle animate-subtitle">新世征途 携手破界</p>
+            <div class="hero-buttons">
+                <button class="cta-button pulse-animation" onclick="window.open('https://indienova.com/novapress/game/id/775', '_blank', 'noopener')">
+                    <span class="button-icon"><i class="fas fa-play-circle" aria-hidden="true"></i></span>
+                    参与内测
+                </button>
+                <button class="cta-button secondary" id="trailer-btn">
+                    <span class="button-icon"><i class="fas fa-play" aria-hidden="true"></i></span>
+                    观看预告
+                </button>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>向下滚动</span>
+                <i class="fas fa-chevron-down bounce-animation" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="hero-slider" aria-hidden="true">
+            <div class="slides">
+                <div class="slide active" style="background-image: url('img/slide1.png');" role="img" aria-label="游戏场景幻灯片1"></div>
+                <div class="slide" style="background-image: url('img/slide2.png');" role="img" aria-label="游戏场景幻灯片2"></div>
+                <div class="slide" style="background-image: url('img/slide3.png');" role="img" aria-label="游戏场景幻灯片3"></div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev hover-effect" aria-label="上一张幻灯片"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active" role="button" tabindex="0" aria-label="幻灯片1"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="幻灯片2"></span>
+                    <span class="dot" role="button" tabindex="0" aria-label="幻灯片3"></span>
+                </div>
+                <button class="slider-btn next hover-effect" aria-label="下一张幻灯片"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="slider-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏简介 -->
+    <section id="intro" class="section intro-section">
+        <div class="container">
+            <h2 class="section-title fade-in">游戏简介</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p class="fade-in-up">一款furry向管理、动作角色扮演游戏《鱼干集团那些事：征途》 《鱼干集团那些事》ip兽剧动画 2D角色扮演动作游戏力作</p>
+                    <p class="fade-in-up" style="animation-delay: 0.1s;">据B站up自制动画《鱼干集团那些事》改编</p>
+                    <p class="fade-in-up" style="animation-delay: 0.2s;">玩家将会扮演鱼干集团主管（抛去一些动画中的设定）完成各个任务以及研发各种武器，开通更多部门等等。</p>
+                    <p class="fade-in-up" style="animation-delay: 0.3s;">在原先定的玩法（扮演战斗）中，暂定为：玩家在每一局游戏中可携带三位角色（加上正在使用的），一共五位角色，但是这五位角色要在后续剧情或者关卡中解锁。</p>
+                    <button class="learn-more-btn hover-effect" style="animation-delay: 0.4s;">
+                        <i class="fas fa-book" aria-hidden="true"></i> 了解更多
+                    </button>
+                </div>
+                <div class="intro-image">
+                    <div class="image-container">
+                        <img src="img/竖版封面.png" alt="游戏竖版封面" class="img-hover">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <h3>游戏实景</h3>
+                                <p>点击查看大图</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏信息 -->
+    <section id="info" class="section info-section">
+        <div class="container">
+            <h2 class="section-title fade-in">游戏信息</h2>
+            <div class="info-cards">
+                <div class="info-card card-hover" style="animation-delay: 0.1s;">
+                    <div class="card-icon"><i class="fas fa-gamepad" aria-hidden="true"></i></div>
+                    <h3>游戏类型</h3>
+                    <p>冒险 / 管理 / 动作</p>
+                    <p>角色扮演</p>
+                </div>
+                <div class="info-card card-hover" style="animation-delay: 0.2s;">
+                    <div class="card-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+                    <h3>游戏平台</h3>
+                    <p>PC Steam</p>
+                </div>
+                <div class="info-card card-hover" style="animation-delay: 0.3s;">
+                    <div class="card-icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+                    <h3>发行日期</h3>
+                    <p>2026年</p>
+                    <div class="countdown" id="release-countdown"></div>
+                </div>
+                <div class="info-card card-hover" style="animation-delay: 0.4s;">
+                    <div class="card-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
+                    <h3>游戏模式</h3>
+                    <p>单机</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 宣传视频 -->
+    <section id="video" class="section video-section">
+        <div class="container">
+            <h2 class="section-title fade-in">宣传视频</h2>
+            <div class="video-container fade-in">
+                <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115796160283938&bvid=BV12mv6BLEVt&cid=35033317706&p=" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" title="宣传视频"></iframe>
+                <div class="video-overlay">
+                    <div class="play-button">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实机图片 -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <h2 class="section-title fade-in">实机图片</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item image-zoom">
+                    <img src="img/gameplay.png" alt="游戏截图1 - 游戏场景">
+                    <div class="gallery-overlay">
+                        <h3>游戏场景</h3>
+                        <p>点击放大</p>
+                    </div>
+                </div>
+                <div class="gallery-item image-zoom">
+                    <img src="img/gameplay.png" alt="游戏截图2 - 角色界面">
+                    <div class="gallery-overlay">
+                        <h3>角色界面</h3>
+                        <p>点击放大</p>
+                    </div>
+                </div>
+                <div class="gallery-item image-zoom">
+                    <img src="img/gameplay.png" alt="游戏截图3 - 战斗画面">
+                    <div class="gallery-overlay">
+                        <h3>战斗画面</h3>
+                        <p>点击放大</p>
+                    </div>
+                </div>
+                <div class="gallery-item image-zoom">
+                    <img src="img/gameplay.png" alt="游戏截图4 - 管理界面">
+                    <div class="gallery-overlay">
+                        <h3>管理界面</h3>
+                        <p>点击放大</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开发团队 -->
+    <section id="team" class="section team-section">
+        <div class="container">
+            <h2 class="section-title fade-in">开发团队</h2>
+            <div class="thanks-content fade-in">
+                <div class="studio-logo">
+                    <img src="img/纯白logo透明底.png" alt="联结纪元工作室Logo" class="logo-spin">
+                </div>
+                <div class="thanks-text">
+                    <h3>联结纪元</h3>
+                    <p>一个由一群来自全国各地的中学生组成的团队（中心是云南昆明），我们主要的工作是开发游戏和影视传媒动画美术。</p>
+                    <p>在视觉与科技赛道奔驰</p>
+                </div>
+            </div>
+            <div class="team-grid">
+                <div class="team-member member-hover" style="animation-delay: 0.1s;">
+                    <div class="member-avatar">
+                        <img src="img/yaolan.jpg" alt="耀岚头像">
+                    </div>
+                    <h3>耀岚</h3>
+                    <p>游戏总监</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.2s;">
+                    <div class="member-avatar">
+                        <img src="img/muci.png" alt="慕茨头像">
+                    </div>
+                    <h3>慕茨</h3>
+                    <p>首席美术师</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.3s;">
+                    <div class="member-avatar">
+                        <img src="img/藍楓.jpg" alt="藍楓头像">
+                    </div>
+                    <h3>藍楓不难瘋</h3>
+                    <p>配音总监</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.4s;">
+                    <div class="member-avatar">
+                        <img src="img/多乐.png" alt="多乐头像">
+                    </div>
+                    <h3>百事小多乐</h3>
+                    <p>音乐</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.5s;">
+                    <div class="member-avatar">
+                        <img src="img/icon512.png" alt="灰渊头像">
+                    </div>
+                    <h3>灰渊</h3>
+                    <p>动画</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.6s;">
+                    <div class="member-avatar">
+                        <img src="img/芋圆.jpg" alt="芋圆头像">
+                    </div>
+                    <h3>芋圆</h3>
+                    <p>剪辑</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.7s;">
+                    <div class="member-avatar">
+                        <img src="img/小瑞.jpg" alt="小瑞头像">
+                    </div>
+                    <h3>小瑞</h3>
+                    <p>程序</p>
+                </div>
+                <div class="team-member member-hover" style="animation-delay: 0.8s;">
+                    <div class="member-avatar">
+                        <img src="img/d4ea0cbb980e819debe97f8edaf5a4c0.jpg" alt="璃明.斯科尔罗斯头像">
+                    </div>
+                    <h3>璃明.斯科尔罗斯</h3>
+                    <p>测试</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特别鸣谢 -->
+    <section id="thanks" class="section thanks-section">
+        <div class="container">
+            <h2 class="section-title fade-in">特别鸣谢</h2>
+            <div class="thanks-content slide-in-left">
+                <div class="studio-logo">
+                    <img src="img/众兽逐梦.png" alt="众兽逐梦工作室Logo">
+                </div>
+                <div class="thanks-text">
+                    <h3>众兽逐梦文化工作室</h3>
+                    <p>感谢众兽逐梦文化工作室在游戏开发过程中提供的美术与设定支持和宝贵建议，使《鱼干集团那些事：征途》能够以最佳状态呈现给玩家。</p>
+                </div>
+            </div>
+            <div class="thanks-content slide-in-right">
+                <div class="studio-logo">
+                    <img src="img/黑白回响.png" alt="黑白回响制作组Logo">
+                </div>
+                <div class="thanks-text">
+                    <h3>黑白回响制作组</h3>
+                    <p>感谢黑白回响制作组在游戏开发过程中提供的支持和宝贵建议，使《鱼干集团那些事：征途》能够以最佳状态呈现给玩家。</p>
+                </div>
+            </div>
+            <div class="thanks-content slide-in-left">
+                <div class="studio-logo">
+                    <img src="img/鹿.png" alt="鹿工作室Logo">
+                </div>
+                <div class="thanks-text">
+                    <h3>萌面鹿工作室</h3>
+                    <p>感谢萌面鹿工作室在游戏开发过程中的支持，使《鱼干集团那些事：征途》能够以最佳状态呈现给玩家。</p>
+                </div>
+            </div>
+            <div class="thanks-content slide-in-right">
+                <div class="studio-logo">
+                    <img src="img/极光星漫.png" alt="极光星漫工作室Logo">
+                </div>
+                <div class="thanks-text">
+                    <h3>极光星漫工作室</h3>
+                    <p>感谢极光星漫工作室在游戏开发过程中提供的支持和宝贵建议，使《鱼干集团那些事：征途》能够以最佳状态呈现给玩家。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">联系方式</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="social-links">
+                        <a class="social-link hover-effect" onclick="window.open('https://afdian.com/a/furryjourney', '_blank', 'noopener')" aria-label="爱发电">
+                            <i class="fas fa-heart" aria-hidden="true"></i> 爱发电
+                        </a>
+                        <a class="social-link hover-effect" onclick="window.open('https://space.bilibili.com/1264942842spm_id_from=333.1296.0.0', '_blank', 'noopener')" aria-label="B站">
+                            <i class="fab fa-bilibili" aria-hidden="true"></i> B站
+                        </a>
+                        <a class="social-link hover-effect" onclick="window.open('https://indienova.com/u/nexusworkroom', '_blank', 'noopener')" aria-label="IndieNova">
+                            <i class="fas fa-gamepad" aria-hidden="true"></i> IndieNova
+                        </a>
+                        <a class="social-link hover-effect" aria-label="Steam">
+                            <i class="fab fa-steam" aria-hidden="true"></i> Steam
+                        </a>
+                    </div>
+                    <div class="contact-details fade-in">
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> 邮箱: 1421646141@qq.com</p>
+                        <p><i class="fas fa-handshake" aria-hidden="true"></i> 合作: ap13888170072@163.com</p>
+                        <p><i class="fab fa-qq" aria-hidden="true"></i> QQ论坛：928209459</p>
+                    </div>
+                    <div class="redeem-section">
+                        <h3><i class="fas fa-gift" aria-hidden="true"></i> 兑换内测</h3>
+                        <div class="redeem-form">
+                            <input type="text" id="redeem-code" placeholder="请输入兑换码" class="redeem-input" aria-label="兑换码输入">
+                            <button id="redeem-submit" class="redeem-button hover-effect" aria-label="兑换">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i> 兑换
+                            </button>
+                        </div>
+                        <p class="redeem-hint">输入兑换码即可加入内测QQ群</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="img/logo1280.png" alt="鱼集征途Logo" class="logo-hover">
+                </div>
+                <p>&copy; 2025 联结纪元 版权所有</p>
+                <div class="footer-links">
+                    <a href="agreements.html" target="_blank" rel="noopener">隐私政策</a> | 
+                    <a href="agreements.html" target="_blank" rel="noopener">用户协议</a> | 
+                    <a href="agreements.html" target="_blank" rel="noopener">常见问题</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 兑换成功弹窗 -->
+    <div id="redeem-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="关闭">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+            <h3 id="modal-title">兑换成功！</h3>
+            <p>欢迎加入我们的内测QQ群！</p>
+            <div class="qq-group-image">
+                <img src="img/qq-group.png" alt="内测QQ群二维码">
+            </div>
+            <p class="group-info">群号: 1073802690</p>
+            <button class="modal-button" onclick="window.open('https://qm.qq.com/q/1073802690', '_blank', 'noopener')" aria-label="加入QQ群">
+                <i class="fab fa-qq" aria-hidden="true"></i> 立即加入
+            </button>
+        </div>
+    </div>
+
+    <!-- 图片放大模态框 -->
+    <div id="image-modal" class="modal" role="dialog" aria-labelledby="modal-img" aria-hidden="true">
+        <span class="close-modal" aria-label="关闭">&times;</span>
+        <img class="modal-image" id="modal-img" alt="放大图片">
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

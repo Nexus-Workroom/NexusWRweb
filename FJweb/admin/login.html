@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员登录 - 鱼集征途创意工坊</title>
+    <link rel="stylesheet" href="../agreements.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../img/logo1280.png" type="image/png">
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-circle"></div>
+            <div class="spinner-text">加载中...</div>
+        </div>
+    </div>
+
+    <!-- 登录页面导航 -->
+    <nav class="admin-navbar">
+        <div class="admin-nav-container">
+            <div class="admin-nav-logo">
+                <a href="../index.html">
+                    <img src="../img/logo1280.png" alt="鱼集征途" class="logo-hover">
+                    <span>创意工坊管理后台</span>
+                </a>
+            </div>
+            <div class="admin-nav-links">
+                <a href="../chuangyi.html" class="admin-nav-link">
+                    <i class="fas fa-arrow-left"></i> 返回创意工坊
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 登录主区域 -->
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1><i class="fas fa-user-shield"></i> 管理员登录</h1>
+                <p>请输入管理员账号和密码以访问管理后台</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">
+                        <i class="fas fa-user"></i> 管理员账号
+                    </label>
+                    <input type="text" id="username" name="username" placeholder="请输入管理员账号" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> 密码
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                    <div class="password-toggle">
+                        <i class="fas fa-eye" id="toggle-password"></i>
+                    </div>
+                </div>
+                
+                <div class="form-group remember-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">记住登录状态</label>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> 登录
+                    </button>
+                </div>
+                
+                <div class="login-footer">
+                    <p>默认管理员账号: <strong>admin</strong>，密码: <strong>admin123</strong></p>
+                    <p class="note">注意：这是一个演示系统，请勿使用真实密码</p>
+                </div>
+            </form>
+            
+            <div class="login-error" id="login-error" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="error-message">账号或密码错误</span>
+            </div>
+        </div>
+        
+        <div class="login-info">
+            <h2><i class="fas fa-info-circle"></i> 管理员权限说明</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> 管理创意工坊所有作品</li>
+                <li><i class="fas fa-check-circle"></i> 上架/下架作品</li>
+                <li><i class="fas fa-check-circle"></i> 编辑作品信息</li>
+                <li><i class="fas fa-check-circle"></i> 查看作品统计数据</li>
+                <li><i class="fas fa-check-circle"></i> 管理用户评论</li>
+            </ul>
+            <div class="security-note">
+                <i class="fas fa-shield-alt"></i>
+                <p>请妥善保管管理员账号，切勿泄露给他人</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

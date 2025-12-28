@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创意工坊 - 作品展示 | 鱼集征途</title>
+    <link rel="stylesheet" href="agreements.css">
+    <link rel="stylesheet" href="chuangyi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 协议页面导航 -->
+    <nav class="agreements-navbar">
+        <div class="agreements-nav-container">
+            <div class="agreements-nav-logo">
+                <a href="main.html">
+                    <img src="img/logo1280.png" alt="鱼集征途" class="logo-hover">
+                </a>
+            </div>
+            <ul class="agreements-nav-menu">
+                <li class="agreements-nav-item"><a href="main.html#intro" class="agreements-nav-link"><i class="fas fa-gamepad"></i> 游戏简介</a></li>
+                <li class="agreements-nav-item"><a href="main.html#contact" class="agreements-nav-link"><i class="fas fa-envelope"></i> 联系方式</a></li>
+                <li class="agreements-nav-item"><a href="agreements.html" class="agreements-nav-link"><i class="fas fa-file-contract"></i> 协议文档</a></li>
+                <li class="agreements-nav-item"><a href="chuangyi.html" class="agreements-nav-link active"><i class="fas fa-palette"></i> 创意工坊</a></li>
+                <!-- 管理员入口，只有登录后才显示 -->
+                <li class="agreements-nav-item admin-only" style="display: none;">
+                    <a href="admin/dashboard.html" class="agreements-nav-link admin-link"><i class="fas fa-user-cog"></i> 管理后台</a>
+                </li>
+            </ul>
+            <div class="agreements-hamburger">
+                <span class="agreements-bar"></span>
+                <span class="agreements-bar"></span>
+                <span class="agreements-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 协议页面英雄区域 -->
+    <section class="agreements-hero">
+        <div class="agreements-hero-content">
+            <h1 class="agreements-hero-title">创意工坊社区</h1>
+            <p class="agreements-hero-subtitle">这里有更多关于本游戏的二创内容，包括画稿与DLC等</p>
+        </div>
+    </section>
+
+    <!-- 作品展示区域 -->
+    <section class="workshop-content">
+        <h2 class="section-title">社区作品展示</h2>
+        
+        <!-- 分类筛选 -->
+        <div class="workshop-filters">
+            <button class="filter-btn active" data-filter="all">热门</button>
+            <button class="filter-btn" data-filter="art">美术作品</button>
+            <button class="filter-btn" data-filter="dlc">游戏DLC</button>
+            <button class="filter-btn" data-filter="mod">游戏Mod</button>
+        </div>
+        
+        <!-- 作品网格 -->
+        <div class="workshop-grid" id="workshop-grid">
+            <!-- 作品会通过JavaScript动态生成 -->
+        </div>
+        
+        <!-- 加载更多按钮 -->
+        <div class="load-more">
+            <button class="btn btn-load-more" id="load-more-btn">加载更多作品</button>
+        </div>
+    </section>
+
+    <!-- 作品详情模态框 -->
+    <div class="modal-overlay" id="work-modal">
+        <div class="modal-content">
+            <div class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <div class="modal-image-container">
+                <img class="modal-image" id="modal-image" src="" alt="作品图片">
+            </div>
+            
+            <div class="modal-body">
+                <h2 class="modal-title" id="modal-title">作品标题</h2>
+                
+                <div class="modal-meta">
+                    <div class="modal-author">
+                        <i class="fas fa-user"></i>
+                        <span id="modal-author">作者名称</span>
+                    </div>
+                    <div class="modal-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="modal-date">2025-03-15</span>
+                    </div>
+                    <div class="modal-status">
+                        <i class="fas fa-circle"></i>
+                        <span id="modal-status">已上架</span>
+                    </div>
+                </div>
+                
+                <div class="modal-description" id="modal-description">
+                    作品描述内容将在这里显示。这是一段关于作品的详细描述，包括创作灵感、使用的工具、作品特点等信息。
+                </div>
+                
+                <div class="modal-details">
+                    <h4>作品详情</h4>
+                    <p id="modal-details">作品尺寸: 1920x1080px<br>文件格式: PNG<br>文件大小: 2.3MB</p>
+                </div>
+                
+                <div class="modal-tags" id="modal-tags">
+                    <!-- 标签会动态生成 -->
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn btn-favorite" id="favorite-btn">
+                        <i class="far fa-heart"></i> 收藏作品
+                    </button>
+                    <button class="btn btn-download">
+                        <i class="fas fa-download"></i> 下载资源
+                    </button>
+                    <!-- 管理员操作按钮，仅管理员可见 -->
+                    <div class="admin-actions" style="display: none;">
+                        <button class="btn btn-edit" id="edit-btn">
+                            <i class="fas fa-edit"></i> 编辑作品
+                        </button>
+                        <button class="btn btn-delete" id="delete-btn">
+                            <i class="fas fa-trash"></i> 下架作品
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 协议页面页脚 -->
+    <footer class="agreements-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="main.html">
+                        <img src="img/logo1280.png" alt="鱼集征途">
+                    </a>
+                </div>
+                <p>&copy; 2025 联结纪元 版权所有</p>
+                <div class="footer-links">
+                    <a href="main.html">返回首页</a> | 
+                    <a href="main.html#contact">联系我们</a> | 
+                    <a href="agreements.html#privacy">隐私政策</a> |
+                    <a href="admin/login.html">管理员登录</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="chuangyi.js"></script>
+</body>
+</html>
