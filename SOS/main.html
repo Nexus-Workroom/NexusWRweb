@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空间的救赎介绍页面</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+		:root{
+			--accent:#30e3ca;
+			--dark:#40514e;
+			--muted: rgba(255,255,255,0.85);
+			--card-bg: rgba(255,255,255,0.06);
+		}
+        html,body{height:100%;margin:0;padding:0;}
+        body {
+            font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+            background-image: url('images/背景.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            color: var(--dark);
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+        }
+		p { color: #fff; margin:0 0 10px; line-height:1.6; }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+            padding: 24px 12px;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+        .container{
+            max-width:1200px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        .carousel-container {
+            width:100%;
+            max-width:1200px;
+            height:400px;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            position: relative;
+            border-radius:12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+            background: rgba(0,0,0,0.25);
+        }
+        .carousel {
+            display: flex;
+            width: 100%;
+            height:100%;
+            transition: transform 0.8s cubic-bezier(.2,.8,.2,1);
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink:0;
+            display:block;
+        }
+        .carousel-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.25));
+            pointer-events: none;
+            border-radius:12px;
+        }
+        .carousel-button{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background: rgba(0,0,0,0.35);
+            border:none;
+            color:#fff;
+            width:40px;height:40px;border-radius:8px;
+            display:flex;align-items:center;justify-content:center;
+            cursor:pointer;
+            z-index:5;
+            backdrop-filter: blur(4px);
+        }
+        .carousel-button:hover{background: rgba(0,0,0,0.55);}
+        .carousel-button.left{left:12px;}
+        .carousel-button.right{right:12px;}
+        .carousel-dots{
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            transform:translateX(-50%);
+            display:flex;
+            gap:8px;
+            z-index:6;
+        }
+        .carousel-dots button{
+            width:10px;height:10px;border-radius:50%;border:none;background:rgba(255,255,255,0.45);cursor:pointer;
+        }
+        .carousel-dots button.active{background:var(--accent);box-shadow:0 0 8px rgba(0,0,0,0.3);}
+        h1,h2,h3{color:#fff;margin:8px 0;}
+        section {
+            padding: 18px;
+            margin: 18px 0;
+            background: var(--card-bg);
+            border-radius: 10px;
+            color: var(--muted);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+        .button {
+            background-color: #fff;
+            color: var(--dark);
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display:inline-block;
+        }
+        .button:hover { background: var(--accent); color:#fff; }
+        footer {
+            background-color: var(--dark);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top:18px;
+        }
+        .contact-info{ display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap;color:var(--muted); }
+        .contact-info div{ flex:1; min-width:180px; }
+        .developer-container{ display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap; }
+        .developer{ flex:1 1 220px; background:var(--card-bg); border-radius:10px;padding:16px;text-align:center;color:var(--muted); box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+        .developer img{ width:120px;height:120px;object-fit:cover;border-radius:12px;margin-bottom:10px; }
+        .trailer-container{ background:transparent;text-align:center;padding:10px; }
+        .trailer-container iframe{ width:100%; max-width:900px; height:calc( (9 / 16) * 100vw ); max-height:520px; border-radius:8px; border:0; }
+        @media (max-width:800px){
+            .carousel-container{height:220px;}
+            .trailer-container iframe{ height:200px; }
+            header{padding:16px;}
+            .container{padding:12px;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="carousel-container" aria-label="轮播图">
+    <div class="carousel" role="list">
+            <img src="images/zhuti.png" alt="图片1" role="listitem">
+            <img src="images/gzszhuti.png" alt="图片2" role="listitem">
+            <img src="images/zhuti2.png" alt="图片3" role="listitem">
+            <img src="images/zhuti3.png" alt="图片4" role="listitem">
+    </div>
+
+    <button class="carousel-button left" aria-label="上一张">&#9664;</button>
+    <button class="carousel-button right" aria-label="下一张">&#9654;</button>
+    <div class="carousel-dots" aria-hidden="false"></div>
+  </div>
+
+  <div class="container">
+    <h1>Salvation of Space&nbsp;</h1>
+	<h1>空间的救赎&nbsp;</h1>
+    <h3>———————————探求真理 即刻启程———————————</h3>
+  </div>
+</header>
+
+<div class="container">
+<section>
+  <h2>游戏简介</h2>
+  <p>一款furry向RPG2D冒险解谜游戏《空间的救赎》（又名Salvation of Space）计划于2026年上架发售于steam平台. </p>
+  <p>主角所在星球尽管科技遥遥领先，但由于资源过度开发，导致星球寿命临终，人们早开始准备星际旅行，主角却在这时发现了组织背后的阴谋，组织了反抗军准备反击，并且受到了外星文明（兽）的帮助…… </p>
+    <p>在这个游戏中你不仅仅扮演主角，还有外星文明的领导者等等；由你带领他们完成各种任务，解开各种难题，甚至凭一己之力拯救族群；只要你有足够的底气，足够勇敢，足够坚强，没有什么是你办不到的！</p>
+</section>
+
+<section>
+  <h2>游戏信息</h2>
+    <ul>
+        <li><strong>游戏名称：</strong>空间的救赎（Salvation of Space）</li>
+		<li><strong>游戏引擎：</strong>Godot（Demo）、Unity</li>
+		<li><strong>目标玩家群体：</strong>E10</li>
+        <li><strong>类型：</strong>角色扮演</li>
+		<li><strong>玩法独特性：</strong>然本质是RPG冒险游戏，让玩家探索与融入，但为了提升沉浸式，以及剧情的独特，参照了类似游戏《米塔》玩法，相比我们会在游戏中放入更多值得探索的东西，例如星际探索（该部分会进行联动）以及多结局（至少10种）等等</li>
+		<li><strong>独特卖点：</strong>联动动画视觉高质量、多种解密玩法结合、跨次元与世界、电影级沉浸式体验、射击\武打\探险相结合</li>
+        <li><strong>平台：</strong>目标平台：Steam（Windows） | Tap Tap（Android）</li>
+		<li><strong>分类：</strong>沉浸式、剧情、探索、科幻、情感、穿越、RPG、未来、半开放性、单人</li>
+		<li><strong>竞品游戏：</strong>《Changed》、《To The Moon》</li>
+        <li><strong>计划发布日期：</strong>2027年</li>
+        <li><strong>价格：</strong>30 CN人民币￥    5 USD美元$    1000 JPY日元     4 EUR欧元€</li>
+	  <li><strong> 可能的硬件要求：</strong>&nbsp;</li>
+	  <li><strong><em> （最低要求） </em></strong></li>
+<li> 操作系统：Windows 10+（需要64位操作系统） </li>
+	  <li> 显卡：AMD/NVIDIA显卡至少有2GB显存 </li>
+	  <li> CPU：运行基准速度为 2.0 GHz或更高的AMD / Intel CPU </li>
+	  <li> 内存：4GB RAM </li>
+	  <li> 存储空间：需要20GB可用空间 </li>
+	  <li> DirectX 版本: 11.0 </li>
+	  <li> <strong> <em> （推荐要求） </em></strong></li>
+	  <li> 操作系统：Windows 11（需要64位操作系统） </li>
+	  <li> 显卡：NVIDIA GTX 750 Ti 2GB/AMD Radeon HD 7850 2GB </li>
+	  <li> CPU：Intel Core i5 4670/ AMD FX-8350 </li>
+	  <li> 内存：4GB RAM </li>
+	  <li> 存储空间：需要20GB可用空间 </li>
+		<li> DirectX 版本: 11.0</li>
+    </ul>
+</section>
+
+
+<!-- 新增的预告片部分 -->
+<section class="trailer-container">
+    <h2>游戏预告片</h2>
+    <p>快来看看我们游戏的精彩预告片，带你提前体验游戏的魅力！</p>
+    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=112660666387135&bvid=BV13bgveTE8m&cid=500001591806999&p=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</section>
+
+<section>
+    <h2>开发人员介绍</h2>
+    <div class="developer-container">
+        <div class="developer">
+            <img src="images/yaolan.gif" alt="开发人员1">
+            <h3>耀岚&nbsp;</h3>
+            <p>游戏设计师/程序员/音乐/策划/信息/剧情</p>
+            <p>负责游戏的整体设计和关卡布局，确保游戏的乐趣和挑战性等等。</p>
+        </div>
+        <div class="developer">
+            <img src="images/muci.png" alt="开发人员2">
+            <h3>慕茨&nbsp;</h3>
+            <p>美术策划&nbsp;</p>
+            <p>负责游戏中的人物、场景和动画设计，使视觉效果更加生动。</p>
+        </div>
+        <div class="developer">
+            <img src="images/muxu.png" alt="开发人员3">
+            <h3>苜蓿&nbsp;</h3>
+            <p>GUI设计师</p>
+            <p>负责游戏中的GUI设计，让用户界面更加生动。</p>
+        </div>
+        <div class="developer">
+            <img src="images/ruicheng.png" alt="开发人员4">
+            <h3>瑞橙&nbsp;</h3>
+            <p>主导画师</p>
+            <p>负责游戏的主要绘画工程，是游戏开发中不可缺失的一部分。</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>开发商介绍</h2>
+    <p>我们的开发团队，名为「纳苏工坊」，成立于2021年，不仅仅致力于制作高质量影视作品，还有开发更让玩家满意的游戏作品。我们的使命是通过创新的游戏设计，为玩家带来全新的体验。</p>
+<strong><img src="images/Nexus toum.png" width="200" height="200" alt=""/></strong></section>
+
+<section>
+  <h2>联系方式</h2>
+    <div class="contact-info">
+        <div>
+            <h3>邮箱：</h3>
+            <p>1421646141@qq.com</p>
+        </div>
+        <div>
+            <h3>交流</h3>
+          <p>QQ群：928209459</p>
+          <p><a href="https://indienova.com/g/the-salvation-of-space">诺娃独立游戏</a></p>
+          <p><a href="https://github.com/Nexus-Workroom/Game-SOS">Github</a></p>
+        </div>
+        <div>
+          <h3>平台</h3>
+          <p><a href="https://afdian.com/a/tsos_game">爱发电</a></p>
+          <p>抖音:qingchenFURRY</p>
+          <p><a href="https://space.bilibili.com/1264942842?spm_id_from=333.1007.0.0">B站</a></p>
+        </div>
+    </div>
+</section>
+</div>
+
+<footer>
+    <p>&copy; 2025 NexusWorkroom纳苏工坊 版权所有</p>
+</footer>
+
+<script>
+    (function(){
+        const carousel = document.querySelector('.carousel');
+        const images = Array.from(document.querySelectorAll('.carousel img'));
+        const total = images.length;
+        let idx = 0;
+        let interval = null;
+        const DURATION = 3500;
+
+        const prevBtn = document.querySelector('.carousel-button.left');
+        const nextBtn = document.querySelector('.carousel-button.right');
+        const dotsWrap = document.querySelector('.carousel-dots');
+
+        function renderDots(){
+            dotsWrap.innerHTML = '';
+            for(let i=0;i<total;i++){
+                const b = document.createElement('button');
+                b.dataset.index = i;
+                if(i===0) b.classList.add('active');
+                b.addEventListener('click', ()=> { goTo(parseInt(b.dataset.index)); resetInterval(); });
+                dotsWrap.appendChild(b);
+            }
+        }
+        function updateDots(){
+            const ds = dotsWrap.querySelectorAll('button');
+            ds.forEach((d,i)=> d.classList.toggle('active', i===idx));
+        }
+        function goTo(i){
+            idx = (i + total) % total;
+            carousel.style.transform = `translateX(${-idx * 100}%)`;
+            updateDots();
+        }
+        function next(){ goTo(idx+1); }
+        function prev(){ goTo(idx-1); }
+
+        function startInterval(){
+            interval = setInterval(next, DURATION);
+        }
+        function resetInterval(){
+            clearInterval(interval);
+            startInterval();
+        }
+
+        renderDots();
+        startInterval();
+
+        nextBtn.addEventListener('click', ()=>{ next(); resetInterval(); });
+        prevBtn.addEventListener('click', ()=>{ prev(); resetInterval(); });
+
+        const parent = document.querySelector('.carousel-container');
+        parent.addEventListener('mouseenter', ()=> clearInterval(interval));
+        parent.addEventListener('mouseleave', ()=> startInterval());
+
+        // make carousel responsive on resize (keeps transform)
+        window.addEventListener('resize', ()=> { carousel.style.transition = 'none'; goTo(idx); setTimeout(()=> carousel.style.transition = '', 50); });
+    })();
+</script>
+
+</body>
+</html>
