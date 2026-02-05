@@ -19,18 +19,6 @@
     <!-- 滚动进度条 -->
     <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
 
-    <!-- 自定义光标 -->
-    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
-    <div class="cursor-outline" id="cursorOutline" aria-hidden="true"></div>
-
-    <!-- 通知条 -->
-    <div class="announcement-bar">
-        <div class="container">
-            <span>🎮 《鱼干集团那些事：征途》Demo版现已发布！</span>
-            <a href="FJweb/main.html" class="announcement-link">立即体验 →</a>
-        </div>
-    </div>
-
     <!-- 导航栏 -->
     <header class="navbar" id="navbar" role="banner">
         <div class="nav-container container">
@@ -58,6 +46,15 @@
         </div>
     </header>
 
+	
+    <!-- 通知条 -->
+<!--    <div class="announcement-bar">		
+        <div class="container">
+            <span>🎮 《鱼干集团那些事：征途》现已在Steam商店上架！快来预约！</span>
+            <a href="FJweb/main.html" class="announcement-link">立即预约 →</a>
+        </div>
+    </div>-->
+
     <!-- 主内容 -->
     <main>
         <!-- 英雄区域 -->
@@ -67,21 +64,12 @@
                 <img src="image/hero-background.jpg" alt="工作室背景" loading="eager" />
                 <div class="bg-overlay"></div>
             </div>
-    
-            <!-- 漂浮Logo背景 -->
-            <div class="floating-logo-bg" id="floatingLogoBg">
-                <div class="logo-background">
-                    <img src="image/白透.png" alt="NexusW.R" class="logo-image-bg" />
-                </div>
-            </div>
             
-            <!-- 粒子背景 -->
-            <div id="particles-canvas" aria-hidden="true"></div>
             
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <div class="hero-badge">独立游戏工作室</div>
+                        <div class="hero-badge">信息科技工作室</div>
                         <h1 id="heroTitle" class="hero-title">
                             <span class="hero-title-line">创造<span class="gradient-text">独特体验</span></span>
                             <span class="hero-title-line">联结<span class="gradient-text">数字纪元</span></span>
@@ -103,7 +91,7 @@
                         </div>
                         <div class="hero-stats">
                             <div class="stat">
-                                <div class="stat-number" data-count="3">3</div>
+                                <div class="stat-number" data-count="3">4</div>
                                 <div class="stat-label">进行中项目</div>
                             </div>
                             <div class="stat">
@@ -225,6 +213,27 @@
                             </a>
                         </div>
                     </div>
+					<div class="project-card">
+                        <div class="project-image">
+                            <img src="image/project-media2.jpg" alt="软件开发项目" />
+                        </div>
+                        <div class="project-content">
+                            <div class="project-category">软件开发</div>
+                            <h3>软件开发支持</h3>
+                            <p>小型软件开发与发行项目。</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <a href="#services" class="project-link">
+                                了解服务
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -289,6 +298,7 @@
                             <li>使用Unity/Unreal/Godot 引擎开发</li>
                             <li>专属定制</li>
                             <li>多平台适配</li>
+							<li>Steam一站式发行</li>
                         </ul>
                     </div>
                     <div class="service-card">
@@ -317,14 +327,14 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <div class="icon-wrapper">🌐</div>
+                            <div class="icon-wrapper">💾</div>
                         </div>
-                        <h3>网站开发</h3>
+                        <h3>软件开发</h3>
                         <p>响应式网站设计、前端开发与交互体验优化。</p>
                         <ul class="service-features">
-                            <li>响应式设计</li>
+                            <li>C++</li>
                             <li>性能优化</li>
-                            <li>SEO 优化</li>
+                            <li>UI全包</li>
                         </ul>
                     </div>
                 </div>
@@ -345,7 +355,6 @@
                             <span class="tech-item">Unity</span>
                             <span class="tech-item">Python</span>
                             <span class="tech-item">Godot</span>
-                            <span class="tech-item">UE5</span>
                         </div>
                     </div>
                     <div class="tech-category">
@@ -366,12 +375,11 @@
                         </div>
                     </div>
                     <div class="tech-category">
-                        <h3>Web开发</h3>
+                        <h3>软件开发</h3>
                         <div class="tech-stack">
-                            <span class="tech-item">HTML/CSS/JS</span>
-                            <span class="tech-item">React</span>
-                            <span class="tech-item">Node.js</span>
-                            <span class="tech-item">Three.js</span>
+                            <span class="tech-item">C++/C#</span>
+                            <span class="tech-item">微软大战代码</span>
+                            <span class="tech-item">软件架构开源</span>
                         </div>
                     </div>
                 </div>
@@ -454,7 +462,7 @@
                                 <div class="method-icon">💬</div>
                                 <div>
                                     <h3>QQ 群</h3>
-                                    <a href="https://jq.qq.com/?_wv=1027&k=928209459" target="_blank">928209459</a>
+                                    <a href="https://qm.qq.com/q/X6dKorTS0M" target="_blank">928209459</a>
                                 </div>
                             </div>
                             <div class="contact-method">
@@ -472,8 +480,14 @@
                             <a href="https://afdian.com/a/furryjourney" target="_blank" class="social-link">
                                 <span>爱发电</span>
                             </a>
-                            <a href="#" class="social-link">
+                            <a href="https://x.com/yaolan_gug?s=21" class="social-link">
                                 <span>Twitter</span>
+                            </a>
+							<a href="https://youtube.com/@nexus.w.r?si=5jJZe-yZn_jz3DDf" class="social-link">
+                                <span>YouTube</span>
+                            </a>
+							<a href="https://www.tiktok.com/@nexus_workroom?_r=1&_t=ZP-93VVAuxh3yp" class="social-link">
+                                <span>TikTok</span>
                             </a>
                         </div>
                     </div>

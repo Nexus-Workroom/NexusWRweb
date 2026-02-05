@@ -34,7 +34,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
-    cursor: none;
 }
 
 /* 鼠标跟随效果 */

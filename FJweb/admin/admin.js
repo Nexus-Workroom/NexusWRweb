@@ -36,33 +36,33 @@ function initLoginPage() {
     }
     
     // 登录表单提交
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const remember = document.getElementById('remember').checked;
-            
-            // 简单验证（在实际应用中，应该与后端API进行验证）
-            if (username === 'admin' && password === 'admin123') {
-                // 登录成功
-                localStorage.setItem('adminLoggedIn', 'true');
-                localStorage.setItem('adminName', '管理员');
-                
-                if (remember) {
-                    localStorage.setItem('adminRemember', 'true');
-                }
-                
-                // 跳转到管理面板
-                window.location.href = 'dashboard.html';
-            } else {
-                // 登录失败
-                showLoginError('账号或密码错误');
-            }
-        });
-    }
+//    const loginForm = document.getElementById('login-form');
+//    if (loginForm) {
+//        loginForm.addEventListener('submit', function(e) {
+//            e.preventDefault();
+//            
+//            const username = document.getElementById('username').value;
+//            const password = document.getElementById('password').value;
+//            const remember = document.getElementById('remember').checked;
+//            
+//            // 简单验证（在实际应用中，应该与后端API进行验证）
+//            if (username === 'admin' && password === 'admin123') {
+//                // 登录成功
+//                localStorage.setItem('adminLoggedIn', 'true');
+//                localStorage.setItem('adminName', '管理员');
+//                
+//                if (remember) {
+//                    localStorage.setItem('adminRemember', 'true');
+//                }
+//                
+//                // 跳转到管理面板
+//                window.location.href = 'dashboard.html';
+//            } else {
+//                // 登录失败
+//                showLoginError('账号或密码错误');
+//            }
+//        });
+//    }
     
     // 检查是否有保存的登录信息
     checkSavedLogin();
