@@ -4,597 +4,351 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>联结纪元 NexusW.R — 独立游戏开发与视觉传媒工作室</title>
-    <meta name="description" content="联结纪元（NexusW.R）— 专注于独立游戏开发、视觉传媒与数字创作。项目：鱼干集团那些事：征途、空间的救赎。" />
+    <meta name="description" content="联结纪元（NexusW.R）— 专注于独立游戏开发、视觉传媒与数字创作。" />
     <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 加载动画 -->
-    <div class="loader" id="loader">
-        <div class="loader-spinner"></div>
+    <!-- 全局噪音与扫描线 -->
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="grid-background"></div>
+
+    <!-- 自定义光标 -->
+    <div class="rog-cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- 滚动进度条 (ROG HUD) -->
+    <div class="rog-scroll-bar">
+        <div class="bar-deco top"></div>
+        <div class="rog-scroll-progress"></div>
+        <div class="bar-deco bottom"></div>
     </div>
 
-    <!-- 滚动进度条 -->
-    <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
-
     <!-- 导航栏 -->
-    <header class="navbar" id="navbar" role="banner">
-        <div class="nav-container container">
-            <div class="nav-logo">
-                <img src="image/logo.png" alt="联结纪元 NexusW.R 标志" onerror="this.style.opacity=0.6" />
-                <span class="logo-text">Nexus<span class="logo-highlight">W.R</span></span>
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo" data-text="NexusW.R">
+                <img src="image/logo.png" alt="NexusW.R" onerror="this.style.display='none'" />
+                <span class="logo-text">Nexus<span class="highlight">W.R</span></span>
             </div>
-            <nav role="navigation">
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">项目</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">服务</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#technology">技术</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">作品</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#partners">合作</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">联系</a></li>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link" data-text="首页">首页</a></li>
+                    <li><a href="#projects" class="nav-link" data-text="项目">项目</a></li>
+                    <li><a href="#services" class="nav-link" data-text="服务">服务</a></li>
+                    <li><a href="#gallery" class="nav-link" data-text="作品">作品</a></li>
+                    <li><a href="#partners" class="nav-link" data-text="合作">合作</a></li>
+                    <li><a href="#contact" class="nav-link" data-text="联系">联系</a></li>
                 </ul>
             </nav>
-            <div class="nav-actions">
-                <a href="#contact" class="nav-button">开始合作</a>
-                <div class="hamburger" id="hamburger" aria-label="菜单">
-                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-                </div>
+            <div class="hamburger" id="hamburger">
+                <span class="line"></span><span class="line"></span>
             </div>
         </div>
     </header>
 
-	
-    <!-- 通知条 -->
-<!--    <div class="announcement-bar">		
-        <div class="container">
-            <span>🎮 《鱼干集团那些事：征途》现已在Steam商店上架！快来预约！</span>
-            <a href="FJweb/main.html" class="announcement-link">立即预约 →</a>
-        </div>
-    </div>-->
-
-    <!-- 主内容 -->
-    <main>
-        <!-- 英雄区域 -->
-        <section class="hero" id="home" aria-labelledby="heroTitle">
-                <!-- 图片背景 -->
-            <div class="hero-bg-image">
-                <img src="image/hero-background.jpg" alt="工作室背景" loading="eager" />
-                <div class="bg-overlay"></div>
-            </div>
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
             
-            
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <div class="hero-badge">信息科技工作室</div>
-                        <h1 id="heroTitle" class="hero-title">
-                            <span class="hero-title-line">创造<span class="gradient-text">独特体验</span></span>
-                            <span class="hero-title-line">联结<span class="gradient-text">数字纪元</span></span>
+            <!-- Hero 区域 -->
+            <section class="hero" id="home">
+                <div class="hero-bg-wrapper">
+                    <img src="image/hero-background.jpg" alt="Hero Background" class="hero-bg" onerror="this.style.opacity=0.3" />
+                    <div class="hero-overlay"></div>
+                </div>
+                
+                <div class="container hero-content">
+                    <div class="hero-text-wrapper">
+                        <div class="cyber-badge decode-text">SYSTEM READY</div>
+                        <h1 class="hero-title">
+                            <div class="line-mask"><span>创造<span class="stroke-text">独特体验</span></span></div>
+                            <div class="line-mask"><span>联结<span class="highlight-red">数字纪元</span></span></div>
                         </h1>
-                        <p class="hero-subtitle">
-                            专注于游戏开发、视觉传媒与数字创作，通过技术赋能创意，<br class="desktop-only" />
-                            打造令人难忘的交互体验。
+                        <p class="hero-desc">
+                            专注于游戏开发、视觉传媒与数字创作。<br>
+                            通过技术赋能创意，打造令人难忘的交互体验。
                         </p>
-                        <div class="hero-buttons">
-                            <a class="cta-button primary" href="#projects">
-                                <span>查看项目</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                        
+                        <div class="hero-btns">
+                            <a href="#projects" class="rog-btn">
+                                <span class="btn-text">INITIALIZE PROJECT</span>
+                                <span class="btn-glitch">INITIALIZE PROJECT</span>
                             </a>
-                            <a class="cta-button secondary" href="#contact">
-                                <span>联系我们</span>
-                            </a>
-                        </div>
-                        <div class="hero-stats">
-                            <div class="stat">
-                                <div class="stat-number" data-count="3">4</div>
-                                <div class="stat-label">进行中项目</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number" data-count="5">5</div>
-                                <div class="stat-label">+ 满意客户</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-number" data-count="2021">2021</div>
-                                <div class="stat-label">创立年份</div>
-                            </div>
                         </div>
                     </div>
-                    <div class="hero-visual">
-                        <div class="floating-card card-1">
+                </div>
+                <div class="deco-text-bg" data-speed="0.2">NEXUS WORKROOM</div>
+            </section>
+
+            <!-- 项目展示 (优化动画版) -->
+            <section class="section" id="projects">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title decode-text">SELECTED PROJECTS</h2>
+                        <span class="cn-sub">精选项目 // DATABASE</span>
+                        <div class="rog-line"></div>
+                    </div>
+
+                    <div class="projects-list">
+                        <!-- 项目 1 -->
+                        <div class="rog-card project-anim-trigger">
+                            <div class="card-visual">
+                                <div class="scan-mask"></div>
+                                <img src="image/1080.png" alt="鱼干集团那些事" onerror="this.src='https://via.placeholder.com/800x500?text=GAME+PROJECT'" />
+                                <div class="card-overlay"></div>
+                            </div>
                             <div class="card-content">
-                                <div class="card-icon">🎮</div>
-                                <h3>游戏开发</h3>
-                                <p>全流程独立游戏制作</p>
+                                <div class="card-meta">RPG / SIMULATION</div>
+                                <h3 class="card-title">鱼干集团那些事：征途</h3>
+                                <p class="card-desc">一款furry向管理模拟经营与动作角色扮演游戏。</p>
+                                <a href="FJweb/main.html" class="rog-link">ACCESS DATA ></a>
                             </div>
                         </div>
-                        <div class="floating-card card-2">
+
+                        <!-- 项目 2 -->
+                        <div class="rog-card project-anim-trigger">
+                            <div class="card-visual">
+                                <div class="scan-mask"></div>
+                                <img src="image/project-sos.jpg" alt="空间的救赎" onerror="this.src='https://via.placeholder.com/800x500?text=STORY+GAME'" />
+                                <div class="card-overlay"></div>
+                            </div>
                             <div class="card-content">
-                                <div class="card-icon">🎨</div>
-                                <h3>视觉设计</h3>
-                                <p>画稿与视觉设计</p>
+                                <div class="card-meta">NARRATIVE PUZZLE</div>
+                                <h3 class="card-title">空间的救赎</h3>
+                                <p class="card-desc">探索人类在极端环境下的情感与选择，线性叙事解谜。</p>
+                                <a href="SOS/main.html" class="rog-link">ACCESS DATA ></a>
                             </div>
                         </div>
-                        <div class="floating-card card-3">
+
+                        <!-- 项目 3 -->
+                        <div class="rog-card project-anim-trigger">
+                            <div class="card-visual">
+                                <div class="scan-mask"></div>
+                                <img src="image/project-media.jpg" alt="视觉传媒" onerror="this.src='https://via.placeholder.com/800x500?text=VISUAL+MEDIA'" />
+                                <div class="card-overlay"></div>
+                            </div>
                             <div class="card-content">
-                                <div class="card-icon">🎬</div>
-                                <h3>视频制作</h3>
-                                <p>宣传片与后期制作</p>
+                                <div class="card-meta">VISUAL MEDIA</div>
+                                <h3 class="card-title">定制传媒方案</h3>
+                                <p class="card-desc">为企业和个人提供视觉设计、视频制作和品牌宣传解决方案。</p>
+                                <a href="#services" class="rog-link">ACCESS DATA ></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-scroll-indicator" aria-hidden="true">
-                <span>探索更多</span>
-                <div class="scroll-arrow">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 项目展示 -->
-        <section class="section projects-section" id="projects">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-subtitle">精选项目</div>
-                    <h2 class="section-title">正在打造的数字体验</h2>
-                    <p class="section-description">我们专注于创造独特的游戏与视觉体验，每个项目都是技术与艺术的结合</p>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card featured">
-                        <div class="project-image">
-                            <img src="image/1080.png" alt="鱼干集团那些事：征途" />
-                            <div class="project-badge">火热开发中</div>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-category">单人角色扮演游戏</div>
-                            <h3>鱼干集团那些事：征途</h3>
-                            <p>一款furry向管理模拟经营与动作角色扮演游戏。</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">模拟经营</span>
-                                <span class="tech-tag">单人游戏</span>
-                                <span class="tech-tag">卡通渲染</span>
-                                <span class="tech-tag">角色扮演</span>
-                            </div>
-                            <a href="FJweb/main.html" class="project-link">
-                                在线演示
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
+            <!-- 服务区域 -->
+            <section class="section dark-section" id="services">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title decode-text">CORE SERVICES</h2>
+                        <span class="cn-sub">核心服务 // MODULES</span>
+                        <div class="rog-line"></div>
                     </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="image/project-sos.jpg" alt="空间的救赎" />
+                    
+                    <div class="services-grid">
+                        <div class="service-box" data-index="01">
+                            <div class="icon">🎮</div>
+                            <h3>游戏开发</h3>
+                            <p>Unity / Unreal / Godot 全流程开发</p>
+                            <div class="corner-deco"></div>
                         </div>
-                        <div class="project-content">
-                            <div class="project-category">叙事解谜游戏</div>
-                            <h3>空间的救赎</h3>
-                            <p>一款以孤独太空与信念救赎为主题的线性叙事解谜游戏，探索人类在极端环境下的情感与选择。</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">超绝剧情</span>
-                                <span class="tech-tag">RPG</span>
-                                <span class="tech-tag">视觉小说</span>
-                            </div>
-                            <a href="SOS/main.html" class="project-link">
-                                查看详情
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
+                        <div class="service-box" data-index="02">
+                            <div class="icon">🎨</div>
+                            <h3>视觉设计</h3>
+                            <p>原画 / UI设计 / 品牌视觉</p>
+                            <div class="corner-deco"></div>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="image/project-media.jpg" alt="传媒服务项目" />
+                        <div class="service-box" data-index="03">
+                            <div class="icon">🎬</div>
+                            <h3>视频制作</h3>
+                            <p>PV剪辑 / 后期特效 / 动画</p>
+                            <div class="corner-deco"></div>
                         </div>
-                        <div class="project-content">
-                            <div class="project-category">视觉传媒</div>
-                            <h3>定制传媒方案</h3>
-                            <p>为企业和个人提供视觉设计、视频制作和品牌宣传解决方案。</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Blender</span>
-                                <span class="tech-tag">After Effects</span>
-                                <span class="tech-tag">Photoshop</span>
-                            </div>
-                            <a href="#services" class="project-link">
-                                了解服务
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-					<div class="project-card">
-                        <div class="project-image">
-                            <img src="image/project-media2.jpg" alt="软件开发项目" />
-                        </div>
-                        <div class="project-content">
-                            <div class="project-category">软件开发</div>
-                            <h3>软件开发支持</h3>
-                            <p>小型软件开发与发行项目。</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">C++</span>
-                                <span class="tech-tag">C#</span>
-                                <span class="tech-tag">Python</span>
-                            </div>
-                            <a href="#services" class="project-link">
-                                了解服务
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
+                        <div class="service-box" data-index="04">
+                            <div class="icon">💻</div>
+                            <h3>软件开发</h3>
+                            <p>C++ / C# / Python 工具开发</p>
+                            <div class="corner-deco"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 合作工作室 -->
-        <section class="section partners-section" id="partners">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-subtitle">合作与信任</div>
-                    <h2 class="section-title">与我们合作的团队</h2>
-                    <p class="section-description">我们与众多创意团队合作，共同打造优秀的数字作品</p>
-                </div>
-                <div class="partners-grid">
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="image/众兽逐梦.png" alt="兽逐梦工作室" />
-                        </div>
-                        <h3>众兽逐梦工作室</h3>
-                        <p>致力于打造兽圈热门动画新IP。众兽奔腾逐梦间，风雨同舟扬帆起！</p>
-                    </div>
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="image/鹿.png" alt="萌面鹿工作室" />
-                        </div>
-                        <h3>萌面鹿工作室</h3>
-                        <p>服装艺术工作室，致力于制作更完美的C服。</p>
-                    </div>
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="image/深海呼吸.png" alt="深海呼吸" />
-                        </div>
-                        <h3>深海呼吸</h3>
-                        <p>一个来自于云南的小众摇滚乐队，即使身处深渊，也要勇敢地去呼吸。</p>
-                    </div>
-                    <div class="partner-card">
-                        <div class="partner-logo">
-                            <img src="image/梦之社工作室logo（亮色）.png" alt="梦之社工作室" />
-                        </div>
-                        <h3>梦之社工作室</h3>
-                        <p>虚拟歌姬制作工作室，大型虚拟歌姬企划梦之社生死论。</p>
+            <!-- 技术栈 (保持简约) -->
+            <section class="section" id="technology">
+                <div class="container">
+                    <div class="tech-strip">
+                        <span class="tech-item">UNITY</span>
+                        <span class="tech-item">UNREAL</span>
+                        <span class="tech-item">BLENDER</span>
+                        <span class="tech-item">ADOBE</span>
+                        <span class="tech-item">C++</span>
+                        <span class="tech-item">PYTHON</span>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 服务 -->
-        <section class="section services-section" id="services">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-subtitle">我们的服务</div>
-                    <h2 class="section-title">数字创作解决方案</h2>
-                    <p class="section-description">从概念到实现，我们提供全方位的游戏开发与视觉传媒服务</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <div class="icon-wrapper">🎮</div>
-                        </div>
-                        <h3>游戏开发</h3>
-                        <p>全流程独立游戏开发，包括策划、程序、美术、音效制作与发布支持。</p>
-                        <ul class="service-features">
-                            <li>使用Unity/Unreal/Godot 引擎开发</li>
-                            <li>专属定制</li>
-                            <li>多平台适配</li>
-							<li>Steam一站式发行</li>
-                        </ul>
+            <!-- 新增：作品展示区域 (Gallery) -->
+            <section class="section" id="gallery">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title decode-text">VISUAL ARCHIVES</h2>
+                        <span class="cn-sub">视觉档案 // GALLERY</span>
+                        <div class="rog-line"></div>
                     </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <div class="icon-wrapper">🎨</div>
-                        </div>
-                        <h3>视觉设计</h3>
-                        <p>平面设计、场景绘制、UI界面与宣传物料视觉设计。</p>
-                        <ul class="service-features">
-                            <li>原画与插画</li>
-                            <li>UI/UX 设计</li>
-                            <li>平面设计</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <div class="icon-wrapper">🎬</div>
-                        </div>
-                        <h3>视频制作</h3>
-                        <p>宣传片拍摄、后期剪辑、特效制作与动画视频创作。</p>
-                        <ul class="service-features">
-                            <li>宣传视频制作</li>
-                            <li>后期特效</li>
-                            <li>动画制作</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <div class="icon-wrapper">💾</div>
-                        </div>
-                        <h3>软件开发</h3>
-                        <p>响应式网站设计、前端开发与交互体验优化。</p>
-                        <ul class="service-features">
-                            <li>C++</li>
-                            <li>性能优化</li>
-                            <li>UI全包</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 技术栈 -->
-        <section class="section tech-section" id="technology">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-subtitle">技术能力</div>
-                    <h2 class="section-title">我们的技术栈</h2>
-                </div>
-                <div class="tech-grid">
-                    <div class="tech-category">
-                        <h3>游戏开发</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Unity</span>
-                            <span class="tech-item">Python</span>
-                            <span class="tech-item">Godot</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>视觉设计</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Blender</span>
-                            <span class="tech-item">Photoshop</span>
-                            <span class="tech-item">Illustrator</span>
-                            <span class="tech-item">Aseprite</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>视频制作</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">Premiere Pro</span>
-                            <span class="tech-tag">After Effects</span>
-                            <span class="tech-tag">DaVinci Resolve</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h3>软件开发</h3>
-                        <div class="tech-stack">
-                            <span class="tech-item">C++/C#</span>
-                            <span class="tech-item">微软大战代码</span>
-                            <span class="tech-item">软件架构开源</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 作品展示 -->
-        <section class="section gallery-section" id="gallery">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-subtitle">作品展示</div>
-                    <h2 class="section-title">视觉创作成果</h2>
-                </div>
-                <div class="gallery-grid">
-                    <div class="gallery-item large">
-                        <img src="image/1080.png" alt="游戏概念设计" />
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">游戏概念设计</div>
-                            <div class="gallery-category">角色设计</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="image/gallery-2.jpg" alt="平面设计" />
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">平面设计</div>
-                            <div class="gallery-category">2D艺术</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="image/gallery-3.jpg" alt="宣传视频" />
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">宣传视频</div>
-                            <div class="gallery-category">视频制作</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="image/gallery-4.jpg" alt="UI界面设计" />
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">UI界面设计</div>
-                            <div class="gallery-category">界面设计</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA 区域 -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>准备开始您的项目？</h2>
-                    <p>我们期待与您合作，将创意转化为令人惊叹的数字体验</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="cta-button primary">开始咨询</a>
-                        <a href="mailto:1421646141@qq.com" class="cta-button outline">发送邮件</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 联系 -->
-        <section class="section contact-section" id="contact">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="section-header">
-                            <div class="section-subtitle">联系我们</div>
-                            <h2 class="section-title">开启合作之旅</h2>
-                            <p class="section-description">无论您是个人创作者还是企业客户，我们都期待与您合作</p>
-                        </div>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <div class="method-icon">📧</div>
-                                <div>
-                                    <h3>电子邮件</h3>
-                                    <a href="mailto:1421646141@qq.com">1421646141@qq.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-method">
-                                <div class="method-icon">💬</div>
-                                <div>
-                                    <h3>QQ 群</h3>
-                                    <a href="https://qm.qq.com/q/X6dKorTS0M" target="_blank">928209459</a>
-                                </div>
-                            </div>
-                            <div class="contact-method">
-                                <div class="method-icon">📍</div>
-                                <div>
-                                    <h3>在线社区</h3>
-                                    <a href="https://indienova.com/u/nexusworkroom" target="_blank">Indienova</a>
+                    <div class="gallery-grid">
+                        <div class="gallery-item large">
+                            <div class="gallery-inner">
+                                <img src="image/1080.png" alt="Concept Art" onerror="this.src='https://via.placeholder.com/800x600?text=CONCEPT+ART'" />
+                                <div class="gallery-overlay">
+                                    <div class="gallery-txt">
+                                        <h4>CONCEPT ART</h4>
+                                        <p>Character Design</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="social-links">
-                            <a href="https://space.bilibili.com/1264942842" target="_blank" class="social-link">
-                                <span>Bilibili</span>
-                            </a>
-                            <a href="https://afdian.com/a/furryjourney" target="_blank" class="social-link">
-                                <span>爱发电</span>
-                            </a>
-                            <a href="https://x.com/yaolan_gug?s=21" class="social-link">
-                                <span>Twitter</span>
-                            </a>
-							<a href="https://youtube.com/@nexus.w.r?si=5jJZe-yZn_jz3DDf" class="social-link">
-                                <span>YouTube</span>
-                            </a>
-							<a href="https://www.tiktok.com/@nexus_workroom?_r=1&_t=ZP-93VVAuxh3yp" class="social-link">
-                                <span>TikTok</span>
-                            </a>
+                        <div class="gallery-item">
+                            <div class="gallery-inner">
+                                <img src="image/gallery-2.jpg" alt="2D Art" onerror="this.src='https://via.placeholder.com/400x300?text=2D+ART'" />
+                                <div class="gallery-overlay">
+                                    <div class="gallery-txt">
+                                        <h4>ILLUSTRATION</h4>
+                                        <p>2D Art</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-inner">
+                                <img src="image/gallery-3.jpg" alt="PV" onerror="this.src='https://via.placeholder.com/400x300?text=VIDEO'" />
+                                <div class="gallery-overlay">
+                                    <div class="gallery-txt">
+                                        <h4>MOTION</h4>
+                                        <p>Video Editing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="gallery-inner">
+                                <img src="image/gallery-4.jpg" alt="UI" onerror="this.src='https://via.placeholder.com/400x300?text=UI+DESIGN'" />
+                                <div class="gallery-overlay">
+                                    <div class="gallery-txt">
+                                        <h4>UI / UX</h4>
+                                        <p>Interface Design</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <h3>合作咨询</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <input type="text" id="contactName" placeholder="姓名 / 工作室名称" required />
+                </div>
+            </section>
+
+            <!-- 合作伙伴 -->
+            <section class="section" id="partners">
+                <div class="container">
+                    <div class="partners-marquee">
+                        <div class="marquee-content">
+                            <span>众兽逐梦工作室</span> <span class="separator">//</span>
+                            <span>萌面鹿工作室</span> <span class="separator">//</span>
+                            <span>深海呼吸乐队</span> <span class="separator">//</span>
+                            <span>梦之社工作室</span> <span class="separator">//</span>
+                            <span>众兽逐梦工作室</span> <span class="separator">//</span>
+                            <span>萌面鹿工作室</span> <span class="separator">//</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系区域 -->
+            <section class="section contact-section" id="contact">
+                <div class="contact-bg-overlay"></div>
+                <div class="container contact-container">
+                    <div class="contact-left">
+                        <h2 class="glitch-effect" data-text="START MISSION">START MISSION</h2>
+                        <p>开启属于您的数字纪元</p>
+                        <form class="rog-form" id="contactForm">
+                            <div class="input-group">
+                                <input type="text" placeholder="NAME / 代号" class="rog-input" required>
+                                <div class="input-border"></div>
                             </div>
-                            <div class="form-group">
-                                <input type="email" id="contactEmail" placeholder="邮箱地址" required />
+                            <div class="input-group">
+                                <input type="email" placeholder="EMAIL / 邮箱" class="rog-input" required>
+                                <div class="input-border"></div>
                             </div>
-                            <div class="form-group">
-                                <select id="projectType" required>
-                                    <option value="" disabled selected>合作类型</option>
-                                    <option value="game">游戏开发合作</option>
-                                    <option value="design">视觉设计合作</option>
-                                    <option value="video">视频制作合作</option>
-                                    <option value="other">其他合作</option>
-                                </select>
+                            <div class="input-group">
+                                <textarea rows="4" placeholder="BRIEF / 任务详情" class="rog-input"></textarea>
+                                <div class="input-border"></div>
                             </div>
-                            <div class="form-group">
-                                <textarea id="contactMessage" placeholder="请简要描述您的项目需求..." rows="5"></textarea>
-                            </div>
-                            <button type="button" class="submit-btn" id="sendContactBtn">
-                                <span>发送合作请求</span>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <path d="M4.16669 10H15.8334M15.8334 10L10.8334 5M15.8334 10L10.8334 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <button type="button" class="rog-btn full-width" id="sendBtn">
+                                <span class="btn-text">TRANSMIT DATA</span>
+                                <span class="btn-glitch">TRANSMIT DATA</span>
                             </button>
                         </form>
                     </div>
+                    <div class="contact-right">
+                        <div class="contact-card">
+                            <h3>CONTACT INFO</h3>
+                            <div class="info-row">
+                                <span class="label">MAIL:</span>
+                                <span class="val">1421646141@qq.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">QQ GROUP:</span>
+                                <span class="val">928209459</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">LOCATION:</span>
+                                <span class="val">CN / DIGITAL SPACE</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- 页脚 -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-brand">
+                            <div class="footer-logo">NEXUS W.R</div>
+                            <div class="copyright">© 2021-<span id="year"></span> SYSTEM ALL RIGHTS RESERVED.</div>
+                        </div>
+                        
+                        <div class="footer-links">
+                            <h4>EXTERNAL LINKS</h4>
+                            <div class="social-links">
+                                <a href="https://space.bilibili.com/1264942842" target="_blank" class="social-btn">
+                                    <span class="icon">📺</span> BILIBILI
+                                </a>
+                                <a href="https://afdian.com/a/furryjourney" target="_blank" class="social-btn">
+                                    <span class="icon">⚡</span> AFDIAN
+                                </a>
+                                <a href="https://x.com/yaolan_gug?s=21" target="_blank" class="social-btn">
+                                    <span class="icon">🐦</span> TWITTER
+                                </a>
+                                <a href="https://youtube.com/@nexus.w.r?si=5jJZe-yZn_jz3DDf" target="_blank" class="social-btn">
+                                    <span class="icon">▶</span> YOUTUBE
+                                </a>
+                                <a href="https://indienova.com/u/nexusworkroom" target="_blank" class="social-btn">
+                                    <span class="icon">🎮</span> INDIENOVA
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </main>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="image/logo.png" alt="NexusW.R" />
-                        <span>NexusW.R</span>
-                    </div>
-                    <p class="footer-description">
-                        联结纪元 — 专注于独立游戏开发与视觉传媒的创作工作室
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>项目</h4>
-                        <a href="FJweb/main.html">鱼干集团</a>
-                        <a href="SOS/main.html">空间的救赎</a>
-                        <a href="#projects">所有项目</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>联系</h4>
-                        <a href="#contact">合作咨询</a>
-                        <a href="mailto:1421646141@qq.com">邮件联系</a>
-                        <a href="https://jq.qq.com/?_wv=1027&k=928209459" target="_blank">加入社区</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="year"></span> 联结纪元 NexusW.R — 保留所有权利</p>
-                <div class="footer-legal">
-                    <a href="FJweb/agreements.html#privacy">隐私政策</a>
-                    <a href="FJweb/agreements.html#terms">使用条款</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 回到顶部 -->
-    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M10 15.8333L10 4.16663M10 4.16663L4.16663 9.99996M10 4.16663L15.8333 9.99996" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-
-    <!-- 图片模态框 -->
-    <div id="image-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <button class="close-modal" id="closeImageModal" aria-label="关闭 (Esc)">×</button>
-        <button class="modal-nav prev" id="modalPrev" aria-label="上一张">‹</button>
-        <img class="modal-image" id="modalImage" alt="放大图片" src="" tabindex="0" />
-        <button class="modal-nav next" id="modalNext" aria-label="下一张">›</button>
-    </div>
-
-    <script src="index.js" defer></script>
-    <script>
-        // 设置年份
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // 页面加载完成后移除加载动画
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                if (loader) {
-                    loader.style.opacity = '0';
-                    setTimeout(() => {
-                        loader.style.display = 'none';
-                    }, 300);
-                }
-            }, 500);
-        });
-    </script>
+    <!-- 引用国内高速 CDN 库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
