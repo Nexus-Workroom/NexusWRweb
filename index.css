@@ -14,7 +14,7 @@
 }
 
 /* 基础重置 */
-* { box-sizing: border-box; margin: 0; padding: 0; cursor: none; /* 隐藏系统光标 */ }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: auto; } /* 交给Lenis处理 */
 
 body {

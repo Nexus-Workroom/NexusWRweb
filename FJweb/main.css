@@ -1,8 +1,8 @@
 /* Nexus Epoch - Cyber Blue Theme */
 :root {
     /* 核心主题色：冰川蓝/赛博青 */
-    --theme-cyan: #00f3ff; 
-    --theme-blue: #0078ff;
+    --theme-cyan: #a9e8ff; 
+    --theme-blue: #a9e8ff;
     --theme-bg: #050608;
     --theme-panel: #0e1016;
     --text-main: #ffffff;
@@ -15,7 +15,7 @@
 }
 
 /* 基础重置 */
-* { box-sizing: border-box; margin: 0; padding: 0; cursor: none; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: auto; }
 
 body {
@@ -23,6 +23,16 @@ body {
     color: var(--text-main);
     font-family: var(--font-body);
     overflow-x: hidden;
+}
+
+/*--超链接配置--*/
+a {
+	color: inherit; /* 继承父元素颜色 */
+	text-decoration: none; /* 去掉下划线 */
+}
+a:hover {
+	color: var(--theme-cyan); /* 悬停时的颜色*/
+	text-decoration: none; /* 悬停时去下划线 */
 }
 
 /* --- 全局特效 --- */
